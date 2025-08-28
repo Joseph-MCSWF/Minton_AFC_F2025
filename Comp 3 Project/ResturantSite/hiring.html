@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiring</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body bgcolor="lightblue">
+    <nav align = "center" >
+        <a href="index.html">Landing</a>
+        <a href="menu.html">Menu</a>
+        <a href="hiring.html">Hiring</a>
+    </nav>
+    <br>
+    <br>
+    <header align="center">
+        <font size="6">
+            <b>
+                Krusty Krab Chicken Fingers Hiring Form
+            </b>
+        </font>
+    </header>
+    <br>
+    <br>
+    <div align="center">
+        <form>
+            <table cellpadding="5">
+                <tr>
+                    <td>First name: <font color="red">*</font></td>
+                    <td><input type="text" id="firstName" name="firstName" placeholder="First Name Required" required minlength="1" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Last name:</td>
+                    <td><input type="text" id="lastName" name="lastName" placeholder="Last Name Optional" minlength="1" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Address One: <font color="red">*</font></td>
+                    <td><input type="text" id="addressOne" name="addressOne" placeholder="Address One Required" required minlength="1" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>Address Two:</td>
+                    <td><input type="text" id="addressTwo" name="addressTwo" placeholder="Address Two Optional" minlength="1" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td>City: <font color="red">*</font></td>
+                    <td><input type="text" id="city" name="city" placeholder="City Required" required minlength="1" maxlength="29"></td>
+                </tr>
+                <tr>
+                    <td>State: <font color="red">*</font></td>
+                    <td>
+                        <select name="state" id="state" required>
+                            <option value="">--Select--</option>
+                            <option value="AL">AL</option>
+                            <option value="FL">FL</option>
+                            <option value="KY">KY</option>
+                            <option value="TN">TN</option>
+                            <option value="NY">NY</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age: <font color="red">*</font></td>
+                    <td><input type="number" name="age" id="age" placeholder="21" min="21" max="99" required></td>
+                </tr>
+                <tr>
+                    <td>Phone Number: <font color="red">*</font></td>
+                    <td><input type="tel" id="phoneNumber" name="phoneNumber" required pattern="\d{3}-\d{3}-\d{4}" placeholder="111-222-3333"></td>
+                </tr>
+                <tr>
+                    <td>Email: <font color="red">*</font></td>
+                    <td><input type="email" id="email" name="email" placeholder="Enter your email" minlength="10" maxlength="50" required></td>
+                </tr>
+                <tr>
+                    <td>Password: <font color="red">*</font></td>
+                    <td><input type="password" id="password" name="password" required minlength="8" maxlength="12"
+                               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,12}$"
+                               placeholder="8–12 chars, A-Z, a-z, 0-9, symbol"
+                               title="Password must be 8–12 characters with at least one uppercase, one lowercase, one number, and one symbol."></td>
+                </tr>
+                <tr>
+                    <td>Married:</td>
+                    <td>
+                        Yes <input type="radio" id="marriedYes" name="married" value="Yes">
+                        No <input type="radio" id="marriedNo" name="married" value="No" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">Favorite Colors:</td>
+                    <td>
+                        Red <input type="checkbox" id="red" name="color" value="Red"><br>
+                        Blue <input type="checkbox" id="blue" name="color" value="Blue"><br>
+                        Green <input type="checkbox" id="green" name="color" value="Green"><br>
+                        Yellow <input type="checkbox" id="yellow" name="color" value="Yellow"><br>
+                        Purple <input type="checkbox" id="purple" name="color" value="Purple">
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">More Info:</td>
+                    <td><textarea name="moreInfo" rows="4" maxlength="30"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
