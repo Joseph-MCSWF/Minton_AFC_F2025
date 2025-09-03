@@ -1,0 +1,22 @@
+{
+  "name": "minton_afc_f2025",
+  "version": "1.0.0",
+  "description": "Diet Coke",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph-MCSWF/Minton_AFC_F2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Joseph-MCSWF/Minton_AFC_F2025/issues"
+  },
+  "homepage": "https://github.com/Joseph-MCSWF/Minton_AFC_F2025#readme"
+}
