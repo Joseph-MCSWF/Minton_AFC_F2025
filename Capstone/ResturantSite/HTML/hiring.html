@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Krusty Krab — Now Hiring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"> <!-- Font Awesome icon used here -->
+    <link rel="icon" href="../images/Logo.png" type="image/png" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <script src="../JAVASCRIPT/script.js" defer></script>
+</head>
+<body class="hiring">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="landing.html">
+            <img src="../images/Logo.png" alt="Krusty Krab logo">
+            Krusty Krab
+            <i class="fa-solid fa-user-tie"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="landing.html">Landing</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link active" href="hiring.html">Hiring</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="container main-wrap">
+    <h1 class="text-center mb-4">Now Hiring</h1>
+    <form id="jobForm" class="row g-3">
+        <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="firstName" name="firstName" maxlength="20" required>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" maxlength="20">
+        </div>
+        <div class="col-12">
+            <label for="addressOne" class="form-label">Address 1 <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="addressOne" name="addressOne" maxlength="50" required>
+        </div>
+        <div class="col-12">
+            <label for="addressTwo" class="form-label">Address 2</label>
+            <input type="text" class="form-control" id="addressTwo" name="addressTwo" maxlength="50">
+        </div>
+        <div class="col-md-6">
+            <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="city" name="city" maxlength="29" required>
+        </div>
+        <div class="col-md-6">
+            <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+            <select id="state" name="state" class="form-select" required>
+                <option value="">--Select--</option>
+                <option value="AL">AL</option>
+                <option value="FL">FL</option>
+                <option value="KY">KY</option>
+                <option value="TN">TN</option>
+                <option value="NY">NY</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="age" class="form-label">Age <span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="age" name="age">
+            <div id="ageHelp" class="form-text"></div>
+        </div>
+        <div class="col-md-4">
+            <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="111-222-3333">
+            <div id="phoneHelp" class="form-text"></div>
+        </div>
+        <div class="col-md-4">
+            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" maxlength="50" required>
+        </div>
+        <div class="col-12">
+            <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" id="password" name="password"
+                   placeholder="8–12 chars, A-Z, a-z, 0-9, symbol"
+                   minlength="8" maxlength="12"
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,12}$"
+                   required>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Married:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="marriedYes" name="married" value="Yes">
+                <label class="form-check-label" for="marriedYes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="marriedNo" name="married" value="No" checked>
+                <label class="form-check-label" for="marriedNo">No</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Favorite Colors:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="red" name="color" value="Red">
+                <label class="form-check-label" for="red">Red</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="blue" name="color" value="Blue">
+                <label class="form-check-label" for="blue">Blue</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="green" name="color" value="Green">
+                <label class="form-check-label" for="green">Green</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="yellow" name="color" value="Yellow">
+                <label class="form-check-label" for="yellow">Yellow</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="purple" name="color" value="Purple">
+                <label class="form-check-label" for="purple">Purple</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <label for="moreInfo" class="form-label">More Info</label>
+            <textarea id="moreInfo" name="moreInfo" class="form-control" rows="4"></textarea>
+            <div id="remaining" class="form-text"></div>
+        </div>
+        <div class="col-12 d-flex gap-2">
+            <button type="submit" class="btn btn-outline-light">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
