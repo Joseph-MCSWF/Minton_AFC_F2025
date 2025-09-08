@@ -65,6 +65,30 @@ if (document.body.classList.contains('menu')) {
 
 if (document.body.classList.contains('hiring')){
     const form = document.getElementById('jobForm');
+    const moreInfoEl   = form.elements.moreInfo;
+    const phoneEl   = form.elements.phone;
+    const phoneHelp = document.getElementById('phoneHelp');
+    phoneEl.addEventListener('input', () => {
+        const digits = phoneEl.value.replace(/\D/g, '').slice(0, 10);
+        let formatted = digits;
+        if (digits.length > 6) {
+            formatted = `${digits.slice(0,3)}-${digits.slice(3,6)}-${digits.slice(6)}`;
+        } else if (digits.length > 3) {
+            formatted = `${digits.slice(0,3)}-${digits.slice(3)}`;
+        }
+        phoneEl.value = formatted;
+        phoneHelp.textContent = digits.length < 10 ? 'Format: 111-222-3333' : '';
+    });
+    const remainingEl  = document.getElementById('remaining');
+    const maxCharacters = 30;
+    function updateRemaining() {
+        if (moreInfoEl.value.length > maxCharacters) {
+            moreInfoEl.value = moreInfoEl.value.slice(0, maxCharacters);
+        }
+        remainingEl.textContent = `${maxCharacters - moreInfoEl.value.length} characters left`;
+    }
+    moreInfoEl.addEventListener('input', updateRemaining);
+    updateRemaining();
     const STATES = ['AL', 'FL', 'KY', 'TN', 'NY'];
     const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,12}$/;
     const phoneFormat = /^\d{3}-\d{3}-\d{4}$/;
