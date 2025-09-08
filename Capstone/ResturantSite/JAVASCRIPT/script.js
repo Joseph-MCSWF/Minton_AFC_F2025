@@ -126,6 +126,15 @@ if (document.body.classList.contains('hiring')){
     form.addEventListener('submit', e => {
         if (!formValidation(e.currentTarget)) e.preventDefault();
     });
+    form.addEventListener('submit', e => {
+        if (!formValidation(e.currentTarget)) {
+            e.preventDefault();
+            return;
+        }
+        const data = Object.fromEntries(new FormData(form).entries());
+        data.age = Number(data.age || 0);
+        console.log('Hiring submission:', data);
+    });
 }
 
 
