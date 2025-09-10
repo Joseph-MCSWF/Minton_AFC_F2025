@@ -98,10 +98,7 @@ if (document.body.classList.contains('hiring')){
         f => f.addressOne.value.trim() ? '' : 'Address 1 is required.',
         f => f.city.value.trim() ? '' : 'City is required.',
         f => STATES.includes(f.state.value) ? '' : 'Select a valid state.',
-        f => {
-            const n = Number(f.age.value);
-            return (!Number.isNaN(n) && n >= 21 && n <= 99) ? '' : 'Age must be 21–99.';
-        },
+        f => {const n = Number(f.age.value);return (!Number.isNaN(n) && n >= 21 && n <= 99) ? '' : 'Age must be 21–99.';},
         f => phoneFormat.test(f.phone.value) ? '' : 'Phone must be 111-222-3333.',
         f => (f.email.value.trim() && f.email.value.length <= 50) ? '' : 'Email is required and ≤ 50 chars.',
         f => passwordFormat.test(f.password.value) ? '' : 'Password: 8–12 chars incl. upper, lower, digit, symbol.',
