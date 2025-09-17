@@ -114,7 +114,7 @@ if (document.body.classList.contains('hiring')){
             if (msg) alertString += `- ${msg}\n`;
         });
 
-        if (alertString) {                  // single IF: block + show ALL issues
+        if (alertString) {
             alert('Please fix the following:\n\n' + alertString);
             return false;
         }
