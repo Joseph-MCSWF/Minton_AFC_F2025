@@ -1,0 +1,75 @@
+.elven-navbar {
+    position: relative;
+    background-color: rgba(68, 40, 40, 0.6);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    min-height: 140px;
+    padding: 0.5rem 1rem;
+}
+.elven-navbar .nav-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    pointer-events: none;
+}
+.elven-navbar .nav-center .logo,
+.elven-navbar .nav-center .navText {
+    pointer-events: auto;
+}
+.elven-navbar .nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+}
+.elven-navbar .logo {
+    width: 128px;
+    height: 128px;
+    object-fit: contain;
+}
+.elven-navbar .navText {
+    color: rgb(251, 213, 0);
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', 'Cinzel', ui-serif, serif;
+    letter-spacing: 2px;
+    font-size: 64px;
+    text-shadow: 10px 10px 10px #000;
+    line-height: 1;
+    white-space: nowrap;
+}
+.elven-navbar .linkStyle {
+    color: rgb(251, 213, 0);
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', 'Cinzel', ui-serif, serif;
+    letter-spacing: 1px;
+    font-size: 24px;
+    text-shadow: 6px 6px 8px #000;
+    text-decoration: none;
+}
+.elven-navbar .linkStyle:hover,
+.elven-navbar .linkStyle.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.elven-navbar .linkStyle.nav-link:hover,
+.elven-navbar .linkStyle.nav-link:focus,
+.elven-navbar .linkStyle.nav-link.active {
+    color: #ff7a18 !important;
+    text-decoration: none;
+    text-shadow:
+            0 0 6px rgba(255,122,24,.7),
+            0 0 18px rgba(255,80,0,.45);
+    transition: color .15s ease, text-shadow .15s ease;
+}
+
+@media (max-width: 768px) {
+    .elven-navbar { min-height: 100px; }
+    .elven-navbar .logo { width: 72px; height: 72px; }
+    .elven-navbar .navText { font-size: 32px; letter-spacing: 1px; }
+}

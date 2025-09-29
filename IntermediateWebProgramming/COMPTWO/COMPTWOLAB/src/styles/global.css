@@ -1,0 +1,21 @@
+body{
+    background-image: url('../assets/LOTRResturant.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+html, body, #root { height: 100%; }
+body { margin: 0; }
+
+.page-container {
+    padding-top: 140px;
+    min-height: calc(100svh - 140px);
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding-top: 100px;
+        min-height: calc(100svh - 100px);
+    }
+}
