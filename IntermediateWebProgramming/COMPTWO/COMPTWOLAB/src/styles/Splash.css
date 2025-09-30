@@ -1,0 +1,26 @@
+.splash-text{
+    color: rgb(251, 213, 0);
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', 'Cinzel', ui-serif, serif;
+    letter-spacing: 2px;
+    font-size: 64px;
+    text-shadow: 10px 10px 10px #000;
+    line-height: 1;
+    white-space: nowrap;
+}
+.splash-text:hover{
+    color: #ff7a18 !important;
+    text-decoration: none;
+    text-shadow:
+            0 0 6px rgba(255,122,24,.7),
+            0 0 18px rgba(255,80,0,.45);
+    transition: color .15s ease, text-shadow .15s ease;
+}
+
+.splash-img {
+    width: min(90vw, 560px);
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,.35));
+}

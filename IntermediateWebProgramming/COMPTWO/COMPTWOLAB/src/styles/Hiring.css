@@ -1,0 +1,9 @@
+.hiring-form label {
+    color: rgb(251, 213, 0);
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', 'Cinzel', ui-serif, serif;
+    letter-spacing: 1px;
+    font-size: 24px;
+    text-shadow: 6px 6px 8px #000;
+    text-decoration: none;
+}

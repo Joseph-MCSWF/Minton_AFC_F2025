@@ -7,7 +7,7 @@ export default function AppNavbar() {
     return (
         <Navbar className="elven-navbar fixed-top">
             <nav className="nav-right">
-                <RouterNavLink className="linkStyle nav-link" to="/Splash">Splash</RouterNavLink>
+                <RouterNavLink className="linkStyle nav-link" to="/">Splash</RouterNavLink>
                 <RouterNavLink className="linkStyle nav-link" to="/Menu">Menu</RouterNavLink>
                 <RouterNavLink className="linkStyle nav-link" to="/Hiring">Hiring</RouterNavLink>
             </nav>
