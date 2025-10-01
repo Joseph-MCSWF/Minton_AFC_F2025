@@ -7,3 +7,35 @@
     text-shadow: 6px 6px 8px #000;
     text-decoration: none;
 }
+.hiring-form input {
+    background-color: rgb(46, 37, 3);
+    color: rgb(251, 213, 0);
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', 'Cinzel', ui-serif, serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-shadow: 6px 6px 8px #000;
+    text-decoration: none;
+}
+.hiring-form input::placeholder {
+    color: rgb(251, 213, 0);
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', 'Cinzel', ui-serif, serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-shadow: 6px 6px 8px #000;
+    text-decoration: none;
+}
+.hiring-form button {
+    background-color: rgb(46, 37, 3);
+    color: rgb(251, 213, 0);
+}
+.hiring-form input:focus {
+    background-color: rgb(46, 37, 3);
+    color: rgb(251, 213, 0);
+}
+.hiring-form .form-select,
+.hiring-form .form-select:focus {
+    background-color: rgb(46, 37, 3);
+    color: rgb(251, 213, 0);
+}
