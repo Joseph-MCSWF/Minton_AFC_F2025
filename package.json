@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Diet Coke",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Joseph-MCSWF/Minton_AFC_F2025/issues"
   },
-  "homepage": "https://github.com/Joseph-MCSWF/Minton_AFC_F2025#readme"
+  "homepage": "https://github.com/Joseph-MCSWF/Minton_AFC_F2025#readme",
+  "dependencies": {
+    "react-hook-form": "^7.63.0"
+  }
 }
