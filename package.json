@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/Joseph-MCSWF/Minton_AFC_F2025#readme",
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
     "react-hook-form": "^7.63.0"
   }
 }
