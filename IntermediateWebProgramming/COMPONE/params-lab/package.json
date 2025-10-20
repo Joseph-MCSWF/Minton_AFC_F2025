@@ -1,0 +1,15 @@
+{
+  "name": "params-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node index.js"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "morgan": "1.10.1"
+  }
+}
