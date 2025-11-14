@@ -8,10 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
-
 @RestController
 @RequestMapping("/api/widgets")
+@CrossOrigin(origins = "http://localhost:5173",
+        methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.DELETE, RequestMethod.OPTIONS })
 public class WidgetController {
 
     private final WidgetService widgetService;
@@ -20,30 +20,29 @@ public class WidgetController {
         this.widgetService = widgetService;
     }
 
-    @PostMapping("/api/widgets")
+    @PostMapping
     public ResponseEntity<ResponseWidgetDTO> controllerCreateWidget(@RequestBody RequestWidgetDTO request) {
         WidgetEntity created = widgetService.createWidget(request);
         ResponseWidgetDTO response = widgetService.getWidget(created.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @GetMapping("/api/widgets/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ResponseWidgetDTO> controllerGetWidget(@PathVariable Long id) {
         ResponseWidgetDTO response = widgetService.getWidget(id);
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+        return ResponseEntity.ok(response);
     }
 
-    @PatchMapping("/api/widgets/{id}")
-    public ResponseEntity<ResponseWidgetDTO> controllerUpdateWidget(@PathVariable Long id, @RequestBody RequestWidgetDTO request) {
+    @PatchMapping("/{id}")
+    public ResponseEntity<ResponseWidgetDTO> controllerUpdateWidget(@PathVariable Long id,
+                                                                    @RequestBody RequestWidgetDTO request) {
         ResponseWidgetDTO response = widgetService.updateWidget(id, request);
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+        return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/api/widgets/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteWidget(@PathVariable Long id) {
         widgetService.deleteWidget(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }

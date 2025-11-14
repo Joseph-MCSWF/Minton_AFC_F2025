@@ -1,6 +1,6 @@
+import { useMemo } from "react";
 import WidgetCard from "./WidgetCard/WidgetCard";
-import type {WidgetResponse } from "../API/widget";
-import {useMemo} from "react";
+import type { WidgetResponse } from "../API/widget";
 
 export type SessionWidget = WidgetResponse & {
     status: "created" | "updated" | "fetched" | "deleted";
@@ -8,12 +8,9 @@ export type SessionWidget = WidgetResponse & {
 
 type Props = {
     widgets: SessionWidget[];
-    onUpdated?: (w: WidgetResponse) => void;
-    onDeleted?: (id: number) => void;
-    onError?: (err: Error) => void;
 };
 
-export default function WidgetGrid({ widgets, onUpdated, onDeleted, onError }: Props) {
+export default function WidgetGrid({ widgets }: Props) {
     const visible = useMemo(
         () => widgets.filter((w) => w.status === "created" || w.status === "updated" || w.status === "fetched"),
         [widgets]
@@ -37,13 +34,7 @@ export default function WidgetGrid({ widgets, onUpdated, onDeleted, onError }: P
             }}
         >
             {visible.map((w) => (
-                <WidgetCard
-                    key={w.id}
-                    initial={w}
-                    onUpdated={onUpdated}
-                    onDeleted={onDeleted}
-                    onError={onError}
-                />
+                <WidgetCard key={w.id} mode="display" initial={w} />
             ))}
         </div>
     );

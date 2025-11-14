@@ -1,3 +1,5 @@
+
+
 export type WidgetRequest = {
     name: string;
     blurb: string;
@@ -24,68 +26,69 @@ export class ApiError extends Error {
     }
 }
 
-const API_ROOT = (import.meta as any).env?.VITE_API_ROOT ?? "";
-const BASE_URL = `${API_ROOT}/api/widgets`;
+const BASE_URL = "/api/widgets";
+
+function withDefaultHeaders(init?: RequestInit): RequestInit {
+    const mergedHeaders = {
+        Accept: "application/json",
+        ...(init?.headers || {}),
+    } as Record<string, string>;
+    return { ...init, headers: mergedHeaders };
+}
+
+async function ensureOk(res: Response): Promise<void> {
+    if (res.ok) return;
+    let data: unknown | undefined;
+    try {
+
+        data = await res.json();
+    } catch {
+
+    }
+    const message =
+        (data as any)?.message ??
+        (res.statusText || "Request failed");
+    throw new ApiError(message, res.status, data);
+}
 
 async function requestJson<T>(url: string, init?: RequestInit): Promise<T> {
-    const res = await fetch(url, init);
-    if (!res.ok) {
-        let msg = res.statusText || "Request failed";
-        try {
-            const data = await res.json();
-            throw new ApiError((data as any)?.message ?? msg, res.status, data);
-        } catch {
-            throw new ApiError(msg, res.status);
-        }
-    }
-    return res.json() as Promise<T>;
+    const res = await fetch(url, withDefaultHeaders(init));
+    await ensureOk(res);
+    return await res.json() as T;
 }
 
 async function requestVoid(url: string, init?: RequestInit): Promise<void> {
-    const res = await fetch(url, init);
-    if (!res.ok) {
-        let msg = res.statusText || "Request failed";
-        try {
-            const data = await res.json();
-            throw new ApiError((data as any)?.message ?? msg, res.status, data);
-        } catch {
-            throw new ApiError(msg, res.status);
-        }
-    }
+    const res = await fetch(url, withDefaultHeaders(init));
+    await ensureOk(res);
 }
 
-
-export async function listWidgets(): Promise<WidgetResponse[]> {
-    return requestJson<WidgetResponse[]>(BASE_URL);
-}
-
-
+/** CREATE */
 export async function createWidget(data: WidgetRequest): Promise<WidgetResponse> {
-    return requestJson<WidgetResponse>(BASE_URL, {
+    return await requestJson<WidgetResponse>(BASE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     });
 }
 
-
+/** READ */
 export async function getWidget(id: number): Promise<WidgetResponse> {
-    return requestJson<WidgetResponse>(`${BASE_URL}/${id}`);
+    return await requestJson<WidgetResponse>(`${BASE_URL}/${id}`);
 }
 
-
+/** UPDATE */
 export async function updateWidget(
     id: number,
     patch: Partial<WidgetRequest>
 ): Promise<WidgetResponse> {
-    return requestJson<WidgetResponse>(`${BASE_URL}/${id}`, {
+    return await requestJson<WidgetResponse>(`${BASE_URL}/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(patch),
     });
 }
 
-
+/** DELETE */
 export async function deleteWidget(id: number): Promise<void> {
-    return requestVoid(`${BASE_URL}/${id}`, { method: "DELETE" });
+    return await requestVoid(`${BASE_URL}/${id}`, { method: "DELETE" });
 }
